@@ -1,6 +1,6 @@
 package com.blz.cards;
 
-public class DeckOfCards{
+public class DeckOfCards {
 
     private static final String[] SUITS = { "CLUBS", "DIAMOND", "HEARTS", "SPADES" };
     private static final String[] RANKS = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
