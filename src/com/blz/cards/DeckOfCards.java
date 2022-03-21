@@ -1,22 +1,29 @@
 package com.blz.cards;
 
+import java.util.*;
+
 public class DeckOfCards {
+    public ArrayList <String> cardsDeck = new ArrayList<String>();
+    public ArrayList <String> makeADeck(){
+        String[] suits = {"Clubs", "Diamonds", "Hearts", "Spades"};
+        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "King", "Queen", "Ace"};
+        int numOfCards = suits.length * ranks.length;
 
-    private static final String[] SUITS = { "CLUBS", "DIAMOND", "HEARTS", "SPADES" };
-    private static final String[] RANKS = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
-    private final int SIZE_OF_CARDS= SUITS.length * RANKS.length;
-    public String[] deck = new String[SIZE_OF_CARDS];
+        System.out.println("Number of cards in the deck:" + numOfCards);
 
-
-    public void initializing() {
-        for (int i = 0; i < deck.length; i++) {
-            deck[i] = RANKS[i % 13] + " Of "+ SUITS[i / 13];
+        for (int i = 0; i < ranks.length; i++) {
+            for (int j = 0; j < suits.length; j++) {
+                cardsDeck.add(ranks[i] + " Of -->" + suits[j]);
+            }
         }
+    print(cardsDeck);
+        return cardsDeck;
     }
 
-    public void print() {
-        for (int i = 0; i < deck.length; i++) {
-            System.out.println(deck[i]);
+    public void print(ArrayList<String> cardsDeck) {
+        System.out.println("Cards in Deck:");
+        for (String element : cardsDeck) {
+            System.out.print("\n" + element);
         }
     }
 
