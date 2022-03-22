@@ -2,7 +2,7 @@ package com.blz.cards;
 
     import java.util.Scanner;
 
-public class Players {
+public class Players extends DeckOfCards{
 
     public static int noOfPlayers() {
         System.out.println("\nEnter number of players minimum 2, maximum 4 ");
@@ -19,6 +19,7 @@ public class Players {
     public static void sequenceOfPlay(int player) {
         for (int i = 1; i <= player; i++) {
             System.out.println("Player " + i + " Getting card:");
+
         }
     }
 }
