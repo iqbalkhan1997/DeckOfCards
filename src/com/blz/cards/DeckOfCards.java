@@ -1,42 +1,43 @@
 package com.blz.cards;
 
-import java.util.*;
-
 public class DeckOfCards {
-    public ArrayList <String> cardsDeck = new ArrayList<>();
-    public ArrayList <String> makeADeck(){
-        String[] suits = {"Clubs", "Diamonds", "Hearts", "Spades"};
-        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "King", "Queen", "Ace"};
-        int numOfCards = suits.length * ranks.length;
+    String[] SUITS = { "CLUBS", "DIAMOND", "HEARTS", "SPADES" };
+    String[] RANKS = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
+    private String[] decks = new String[52];
+    private String[][] playersCards = new String[SUITS.length][RANKS.length];
+    private int distributedIndex;
 
-        System.out.println("Number of cards in the deck:" + numOfCards);
+    public void init() {
+        for (int i = 0; i < decks.length; i++) {
+            decks[i] = RANKS[i % 13] + SUITS[i / 13];
+        }
+    }
 
-        for (int i = 0; i < ranks.length; i++) {
-            for (int j = 0; j < suits.length; j++) {
-                cardsDeck.add(ranks[i] + " Of -->" + suits[j]);
+
+    public void shuffle() {
+        for (int i = 0; i < decks.length; i++) {
+            int randomIndex = (int) (Math.random() * decks.length);
+            String temp = decks[i];
+            decks[i] = decks[randomIndex];
+            decks[randomIndex] = temp;
+        }
+    }
+
+    public void distribute() {
+        for (int j = 0; j < 9; j++) {
+            for (int i = 0; i < 4; i++) {
+                playersCards[i][j] = decks[distributedIndex++];
             }
         }
-    print(cardsDeck);
-        return cardsDeck;
+//		distributedIndex = 0;
     }
 
-    public static void shuffle(ArrayList<String> cardsDeck) {
-        System.out.println("shuffling the cards before Distribution");
-        ArrayList<String> temp = new ArrayList<String>();
-        while (!cardsDeck.isEmpty()) {
-            int loc = (int) (Math.random() * cardsDeck.size());
-            temp.add(cardsDeck.get(loc));
-            cardsDeck.remove(loc);
+    public void print() {
+        for (int i = 0; i < decks.length; i++) {
+            System.out.println(decks[i]);
         }
-        cardsDeck = temp;
-        print(cardsDeck);
     }
 
-    public static void print(ArrayList<String> cardsDeck) {
-        System.out.println("Cards in Deck:");
-        for (String element : cardsDeck) {
-            System.out.print("\n" + element);
-        }
-    }
+
 
 }
