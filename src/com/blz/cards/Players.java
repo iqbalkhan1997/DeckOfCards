@@ -4,7 +4,7 @@ package com.blz.cards;
 
 public class Players extends DeckOfCards{
 
-    public static int noOfPlayers() {
+    public static int players() {
         System.out.println("\nEnter number of players minimum 2, maximum 4 ");
         Scanner scanner = new Scanner(System.in);
         int player = scanner.nextInt();
@@ -12,10 +12,11 @@ public class Players extends DeckOfCards{
             System.out.println(player + " players will  play the game");
         } else {
             System.out.println("please enter number of players in the Range");
-            noOfPlayers();
         }
         return player;
+
     }
+
     public static void sequenceOfPlay(int player) {
         for (int i = 1; i <= player; i++) {
             System.out.println("Player " + i + " Getting card:");

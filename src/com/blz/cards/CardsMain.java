@@ -9,8 +9,9 @@ public class CardsMain {
         DeckOfCards deckOfCard = new DeckOfCards();
         ArrayList<String> make = deckOfCard.makeADeck();
 
-        int players = Players.noOfPlayers();
-        Players.sequenceOfPlay(players);
+        int player = Players.players();
+        Players.sequenceOfPlay(player);
         deckOfCard.shuffle(make);
+
     }
 }
