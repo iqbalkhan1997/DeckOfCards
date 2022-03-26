@@ -7,5 +7,6 @@ public class CardsMain {
        deckOfCard.init();
        deckOfCard.shuffle();
        deckOfCard.distribute();
+       deckOfCard.printDistributedCards();
     }
 }

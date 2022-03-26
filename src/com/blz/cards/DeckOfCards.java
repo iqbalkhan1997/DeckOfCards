@@ -38,6 +38,14 @@ public class DeckOfCards {
         }
     }
 
-
+    public void printDistributedCards() {
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Player "+(i+1)+"");
+            for (int j = 0; j < 9; j++) {
+                System.out.print(playersCards[i][j]+"    ");
+            }
+            System.out.println("\n");
+        }
+    }
 
 }
