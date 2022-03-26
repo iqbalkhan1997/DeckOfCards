@@ -20,7 +20,8 @@ public class DeckOfCards {
         return cardsDeck;
     }
 
-    public static void shuffle(ArrayList<String> cardsDeck) {
+    public  void shuffle(ArrayList<String> cardsDeck) {
+        System.out.println();
         System.out.println("shuffling the cards before Distribution");
         ArrayList<String> temp = new ArrayList<String>();
         while (!cardsDeck.isEmpty()) {
