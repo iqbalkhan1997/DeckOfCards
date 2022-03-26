@@ -7,8 +7,6 @@ public class CardsMain {
         DeckOfCards deckOfCard = new DeckOfCards();
         deckOfCard.initializing();
         deckOfCard.print();
-
-        int players = Players.noOfPlayers();
-        Players.sequenceOfPlay(players);
+        Players.players();
     }
 }
